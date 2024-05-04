@@ -1,0 +1,33 @@
+{
+  "palavras_comuns_cpf": [
+    "CPF",
+    "NOME",
+    "DATA",
+    "NASCIMENTO",
+    "MINISTERIO",
+    "MINISTÉRIO",
+    "MINISTÉRIO DA FAZENDA",
+    "FAZENDA",
+    "MÃE",
+    "PAI",
+    "RG",
+    "ESTADO",
+    "CIVIL",
+    "NATURALIDADE",
+    "NACIONALIDADE",
+    "PROFISSÃO",
+    "ENDEREÇO",
+    "COMPLEMENTO",
+    "CEP",
+    "BAIRRO",
+    "CIDADE",
+    "UF",
+    "TELEFONE",
+    "CELULAR",
+    "COMPROVANTE DE INSCRIÇÃO",
+    "COMPROVANTE",
+    "INSCRIÇÃO",
+    "INSCRIÇAO",
+    "E-MAIL"
+  ]
+}

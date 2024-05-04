@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import { FiltrarDocController } from '../../controllers/rg/FiltrarDocController.js';
+import { FiltrarDocController } from '../../controllers/cpf/FiltrarDocController.js';
 
 const router = express.Router();
 
@@ -8,6 +8,6 @@ const router = express.Router();
 const upload = multer({ dest: 'uploads/' });
 
 
-router.post('/rg', upload.single('imagem'), FiltrarDocController);
+router.post('/cpf', upload.single('imagem'), FiltrarDocController);
 
 export default router;

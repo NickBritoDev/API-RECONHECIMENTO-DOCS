@@ -1,6 +1,6 @@
 import multer from 'multer';
-import { FiltrarPadroes } from '../../services/rg/FiltrarDocService.js';
-import { getPadroesDoc } from '../../models/rg/rg.js';
+import { FiltrarPadroes } from '../../services/cpf/FiltrarDocService.js';
+import { getPadroesDoc } from '../../models/cpf/cpf.js';
 
 
 const upload = multer({ dest: 'uploads/' });

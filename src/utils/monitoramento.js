@@ -1,13 +1,12 @@
 import os from 'os';
 
 export function monitorarRecursos() {
-    const cpuUsage = os.loadavg()[0]; // Uso médio da CPU nos últimos 1 minuto
+    const cpuUsage = os.loadavg()[0];
     const memoriaTotal = os.totalmem();
     const memoriaUsada = memoriaTotal - os.freemem();
     const memoriaPercentual = (memoriaUsada / memoriaTotal) * 100;
     const storageTotal = os.totalmem();
     const storageUsado = storageTotal - os.freemem();
-    const storagePercentual = (storageUsado / storageTotal) * 100;
 
     console.clear();
     console.table([
