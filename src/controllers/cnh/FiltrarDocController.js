@@ -1,6 +1,7 @@
 import multer from 'multer';
-import { FiltrarPadroes } from '../../services/rg/FiltrarDocService.js';
-import { getPadroesDoc } from '../../models/rg/rg.js';
+import { FiltrarPadroes } from '../../services/cnh/FiltrarDocService.js';
+import { getPadroesDoc } from '../../models/cnh/cnh.js';
+
 
 const upload = multer({ dest: 'uploads/' });
 
@@ -17,7 +18,7 @@ export const FiltrarDocController = async (req, res) => {
     const imagePath = req.file.path;
     const palavrasEncontradas = await FiltrarPadroes(getPadroesDoc, imagePath);
 
-    const possuiRG = palavrasEncontradas.some(palavra => palavra.toUpperCase() === 'RG');
+    const possuiRG = palavrasEncontradas.some(palavra => palavra.toUpperCase() === 'HABILITAÇÃO');
 
     if (possuiRG) {
       return res.status(200).json({
@@ -37,3 +38,4 @@ export const FiltrarDocController = async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 }
+
