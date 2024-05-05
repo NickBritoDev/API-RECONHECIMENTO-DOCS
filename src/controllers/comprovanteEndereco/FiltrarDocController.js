@@ -1,6 +1,7 @@
 import multer from 'multer';
-import { FiltrarPadroes } from '../../services/rg/FiltrarDocService.js';
-import { getPadroesDoc } from '../../models/rg/rg.js';
+import { FiltrarPadroes } from '../../services/comprovanteEndereco/FiltrarDocService.js';
+import { getPadroesDoc } from '../../models/comprovanteEndereco/comprovanteEndereco.js';
+
 
 const upload = multer({ dest: 'uploads/' });
 
@@ -17,9 +18,9 @@ export const FiltrarDocController = async (req, res) => {
     const imagePath = req.file.path;
     const palavrasEncontradas = await FiltrarPadroes(getPadroesDoc, imagePath);
 
-    const possuiRG = palavrasEncontradas.some(palavra => palavra.toUpperCase() === 'IDENTIDADE');
+    const possuiComprovanteEndereco = palavrasEncontradas.some(palavra => palavra.toUpperCase() === 'ESTADUAL' || 'MUNICIPAL' && 'CEP');
 
-    if (possuiRG) {
+    if (possuiComprovanteEndereco) {
       return res.status(200).json({
         status: true,
         palavras_chave: palavrasEncontradas,
@@ -37,3 +38,4 @@ export const FiltrarDocController = async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 }
+

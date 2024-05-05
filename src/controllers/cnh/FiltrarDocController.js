@@ -18,9 +18,9 @@ export const FiltrarDocController = async (req, res) => {
     const imagePath = req.file.path;
     const palavrasEncontradas = await FiltrarPadroes(getPadroesDoc, imagePath);
 
-    const possuiRG = palavrasEncontradas.some(palavra => palavra.toUpperCase() === 'HABILITAÇÃO');
+    const possuiCNH = palavrasEncontradas.some(palavra => palavra.toUpperCase() === 'HABILITAÇÃO');
 
-    if (possuiRG) {
+    if (possuiCNH) {
       return res.status(200).json({
         status: true,
         palavras_chave: palavrasEncontradas,

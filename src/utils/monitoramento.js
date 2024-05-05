@@ -5,8 +5,6 @@ export function monitorarRecursos() {
     const memoriaTotal = os.totalmem();
     const memoriaUsada = memoriaTotal - os.freemem();
     const memoriaPercentual = (memoriaUsada / memoriaTotal) * 100;
-    const storageTotal = os.totalmem();
-    const storageUsado = storageTotal - os.freemem();
 
     console.clear();
     console.table([
